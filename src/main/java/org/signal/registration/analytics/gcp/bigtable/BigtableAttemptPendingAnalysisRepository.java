@@ -13,6 +13,7 @@ import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import io.micrometer.core.instrument.MeterRegistry;
+import io.micronaut.context.annotation.Requires;
 import io.micronaut.scheduling.TaskExecutors;
 import jakarta.inject.Named;
 import java.io.UncheckedIOException;
@@ -35,6 +36,8 @@ import org.slf4j.LoggerFactory;
  * a backing store.
  */
 @Singleton
+@Requires(property = "gcp.bigtable.project-id")
+@Requires(property = "gcp.bigtable.instance-id")
 public class BigtableAttemptPendingAnalysisRepository implements AttemptPendingAnalysisRepository {
 
   private final BigtableDataClient bigtableDataClient;

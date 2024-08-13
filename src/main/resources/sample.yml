@@ -6,11 +6,11 @@ micronaut:
     binders:
       netty:
         queues:
-          enabled: true
+          enabled: false
 
     export:
       datadog:
-        enabled: true
+        enabled: false
         step: 20s
 
     tags:
@@ -45,6 +45,7 @@ adaptive:
     default-choices:
       - twilio-verify
       - twilio-programmable-voice
+
 twilio:
   account-sid: ACCOUNT-SID
   api-key-sid: API-KEY-SID

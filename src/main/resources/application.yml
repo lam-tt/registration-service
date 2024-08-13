@@ -6,7 +6,7 @@ micronaut:
     binders:
       netty:
         queues:
-          enabled: true
+          enabled: false
 
     export:
       datadog:

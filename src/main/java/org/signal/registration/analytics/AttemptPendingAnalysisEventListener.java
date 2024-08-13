@@ -41,6 +41,9 @@ public class AttemptPendingAnalysisEventListener implements ApplicationEventList
     this.meterRegistry = meterRegistry;
   }
 
+	// FIXME: Error invoking scheduled task for bean [org.signal.registration.session.MemorySessionRepository@4e88930d]
+	//  Failed to inject value for parameter [repository] of class: org.signal.registration.analytics.AttemptPendingAnalysisEventListener
+	//  Message: No bean of type [org.signal.registration.analytics.AttemptPendingAnalysisRepository] exists
   @Override
   public void onApplicationEvent(final SessionCompletedEvent event) {
     getAttemptsFromSession(event.session()).stream()
